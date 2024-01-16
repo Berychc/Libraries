@@ -1,33 +1,39 @@
 package org.example;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Employee {
 
-    private String fullName;
-    private int departament;
+    private String name;
+    private String surName;
 
-    public Employee(String fullName, int departament) {
-        this.fullName = fullName;
-        this.departament = departament;
+    public Employee(String name, String surName) {
+        this.name = name;
+        this.surName = surName;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getDepartament() {
-        return departament;
+    public String getSurName() {
+        return surName;
     }
 
-    public void setDepartament(int departament) {
-        this.departament = departament;
+    public void setSurName(String surName) {
+        this.surName = surName;
     }
 
     @Override
     public String toString() {
-        return "Сотрудник { Ф.И.О - " + fullName + " | Отдел - " + departament + '}';
+        return "Сотрудник - " + name + " " + surName;
+    }
+
+    public String formatName(String fullname) {
+        return StringUtils.capitalize(StringUtils.trim(fullname));
     }
 }
